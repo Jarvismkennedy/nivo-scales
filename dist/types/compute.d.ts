@@ -34,7 +34,7 @@ export declare type ComputedSerie<S = never, D extends SerieDatum = SerieDatum> 
 export declare const getOtherAxis: (axis: ScaleAxis) => ScaleAxis;
 export declare const compareValues: (a: string | number, b: string | number) => boolean;
 export declare const compareDateValues: (a: Date, b: Date) => boolean;
-export declare function computeScale<Input extends ScaleValue>(spec: ScaleSpec, data: ComputedSerieAxis<any>, size: number, axis: ScaleAxis): import("./types").ScaleSymlog | import("d3-scale").ScaleLogarithmic<number, number, never> | import("./types").ScaleLinear<number> | import("./types").ScalePoint<Input> | import("./types").ScaleBand<Input> | import("./types").ScaleTime<Date | import("d3-scale").NumberValue>;
+export declare function computeScale<Input extends ScaleValue>(spec: ScaleSpec, data: ComputedSerieAxis<any>, size: number, axis: ScaleAxis): import("./types").ScaleLog | import("./types").ScaleSymlog | import("./types").ScaleLinear<number> | import("./types").ScalePoint<Input> | import("./types").ScaleBand<Input> | import("./types").ScaleTime<Date | import("d3-scale").NumberValue>;
 /**
  * Compute x/y d3 scales from an array of data series, and scale specifications.
  *
@@ -44,8 +44,8 @@ export declare function computeScale<Input extends ScaleValue>(spec: ScaleSpec, 
  */
 export declare const computeXYScalesForSeries: <S = never, D extends SerieDatum = SerieDatum>(series: Serie<S, D>[], xScaleSpec: ScaleSpec, yScaleSpec: ScaleSpec, width: number, height: number) => {
     series: ComputedSerie<S, D>[];
-    xScale: import("./types").ScaleSymlog | import("d3-scale").ScaleLogarithmic<number, number, never> | import("./types").ScaleLinear<number> | import("./types").ScaleTime<Date | import("d3-scale").NumberValue> | import("./types").ScalePoint<D["x"]> | import("./types").ScaleBand<D["x"]>;
-    yScale: import("./types").ScaleSymlog | import("d3-scale").ScaleLogarithmic<number, number, never> | import("./types").ScaleLinear<number> | import("./types").ScaleTime<Date | import("d3-scale").NumberValue> | import("./types").ScalePoint<D["y"]> | import("./types").ScaleBand<D["y"]>;
+    xScale: import("./types").ScaleLog | import("./types").ScaleSymlog | import("./types").ScaleLinear<number> | import("./types").ScaleTime<Date | import("d3-scale").NumberValue> | import("./types").ScalePoint<D["x"]> | import("./types").ScaleBand<D["x"]>;
+    yScale: import("./types").ScaleLog | import("./types").ScaleSymlog | import("./types").ScaleLinear<number> | import("./types").ScaleTime<Date | import("d3-scale").NumberValue> | import("./types").ScalePoint<D["y"]> | import("./types").ScaleBand<D["y"]>;
     x: {
         all: unknown[];
         min: unknown;
